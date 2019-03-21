@@ -2,8 +2,8 @@ require('dotenv').config()
 const mongoose = require('mongoose')
 mongoose.connect(process.env.MONGODB_URI)
 
-const Villager = require('../models/VillagerSchema')
-const Item = require('../models/ItemSchema')
+const Villager = require('../models/Villager')
+const Item = require('../models/Item')
 
 const bindingBlade = new Item ({
     name: 'Binding Blade',
