@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
 
 const VillagerSchema = new Schema ({
@@ -6,7 +6,7 @@ const VillagerSchema = new Schema ({
         type: String,
         default: 'Villager Name'
     },
-    Species: {
+    species: {
         type: String,
         default: 'Animal'
     },
@@ -19,7 +19,7 @@ const VillagerSchema = new Schema ({
         default: 'Villager'
     },
     birthday: {
-        type: Date,
+        type: String,
         default: Date.now()
     },
     coffee : {
@@ -38,7 +38,6 @@ const VillagerSchema = new Schema ({
         type: Schema.Types.ObjectId,
         ref: 'Item'
     }]
-
 })
 
 module.exports = mongoose.model('Villager', VillagerSchema)
