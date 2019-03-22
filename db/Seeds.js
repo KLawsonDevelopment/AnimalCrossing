@@ -25,9 +25,21 @@ const roy = new Villager ({
     items: [bindingBlade]
 })
 
+const random = new Villager ({
+    name: 'Random',
+    species: 'Random',
+    gender: 'Random',
+    service: 'Random',
+    birthday: 'Random',
+    coffee: 'Random',
+    img: "https://fireemblemwiki.org/w/images/thumb/d/d5/FEA_Roy.png/400px-FEA_Roy.png",
+    timeAwake: 'Random',
+    items: []
+})
+
 Villager.deleteMany({})
     .then(() => Item.deleteMany({}))
-    .then(() => Villager.create(roy))
+    .then(() => Villager.create(roy, random))
     .then(() => Item.create(bindingBlade))
     .then(() => console.log(roy.name + " has been added"))
     .then(() => console.log(bindingBlade.name + " has been added"))
