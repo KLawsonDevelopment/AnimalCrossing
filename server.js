@@ -9,7 +9,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static(`${__dirname}/client/build`))
 
-app.use('/api/characters', router)
+app.use('/api', router)
 app.get('/*', (req, res) => {
     res.sendFile(`${__dirname}/client/build/index.html`)
   })

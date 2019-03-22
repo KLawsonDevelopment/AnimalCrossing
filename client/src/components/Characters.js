@@ -14,7 +14,6 @@ class Characters extends Component {
 
     getCharacters = () => {
         axios.get('/api/characters').then(res => {
-            console.log(res.data)
             this.setState({characters: res.data})
         })
     }

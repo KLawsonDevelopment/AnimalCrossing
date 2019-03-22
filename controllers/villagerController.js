@@ -1,9 +1,10 @@
 const Villager = require('../models/Villager')
+const Item = require('../models/Item')
 
 const villagerController = {
     index: async (req, res) => {
         try {
-            const villagers = await Villager.find({})
+            const villagers = await Villager.find({}).populate('items')
             res.send(villagers)
         }
         catch (err) {
@@ -12,8 +13,8 @@ const villagerController = {
     },
     show: async (req, res) => {
         try {
-            const villagerId = req.params.id
-            const villager = await Villager.findById(villagerId)
+            const villagerId = req.params.characterId
+            const villager = await Villager.findById(villagerId).populate('items')
             res.json(villager)
         }
         catch (err) {
@@ -34,7 +35,7 @@ const villagerController = {
     },
     update: async (req, res) => {
         try {
-            const villagerId = req.params.id
+            const villagerId = req.params.characterId
             const updatedVillager = req.body
             const savedVillager = await Villager.findByIdAndUpdate(villagerId, updatedVillager, {new:true})
             res.json(savedVillager)
@@ -46,7 +47,7 @@ const villagerController = {
     },
     delete: async (req, res) => {
         try {
-            const villagerId = req.params.id
+            const villagerId = req.params.characterId
             await Villager.findByIdAndRemove(villagerId)
             res.json({
                 msg: "Deleted."
