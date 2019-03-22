@@ -51,7 +51,9 @@ class SingleCharacter extends Component {
     }
 
     deleteCharacter = () => {
-        axios.delete(`/api/characters/${this.props.match.params.id}`)
+        axios.delete(`/api/characters/${this.props.match.params.id}`).then(() =>{
+            this.props.history.goBack()
+        })
     }
 
     toggleEditForm = () => {

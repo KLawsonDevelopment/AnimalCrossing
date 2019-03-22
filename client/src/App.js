@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import Characters from './components/Characters';
 import SingleCharacter from './components/SingleCharacter';
 import Home from './components/Home';
