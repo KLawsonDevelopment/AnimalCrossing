@@ -90,23 +90,27 @@ class SingleCharacter extends Component {
                                 <input type="text" name="species" defaultValue={species} onChange={this.handleChange}></input>
                             </div>
                             <div>
-                                <label value="gender">gender</label>
+                                <label value="gender">Gender</label>
                                 <input defaultValue={gender} type="text" name="gender" onChange={this.handleChange}></input>
                             </div>
                             <div>
-                                <label value="service">service</label>
+                                <label value="service">Service</label>
                                 <input defaultValue={service} type="text" name="service" onChange={this.handleChange}></input>
                             </div>
                             <div>
-                                <label value="coffee">coffee</label>
+                                <label value="birthday">Birthday</label>
+                                <input defaultValue={birthday} type="text" name="birthday" onChange={this.handleChange}></input>
+                            </div>
+                            <div>
+                                <label value="coffee">Coffee</label>
                                 <input defaultValue={coffee} type="text" name="coffee" onChange={this.handleChange}></input>
                             </div>
                             <div>
-                                <label value="img">img</label>
+                                <label value="img">Villager Image</label>
                                 <input defaultValue={img} type="text" name="img" onChange={this.handleChange}></input>
                             </div>
                             <div>
-                                <label value="timeAwake">timeAwake</label>
+                                <label value="timeAwake">Times Awake</label>
                                 <input defaultValue={timeAwake} type="text" name="timeAwake" onChange={this.handleChange}></input>
                             </div>
                             <button>Submit</button>
