@@ -9,6 +9,7 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <Link to={"/"}>Home</Link>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/characters" component={Characters} />

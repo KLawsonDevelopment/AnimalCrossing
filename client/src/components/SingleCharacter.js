@@ -72,7 +72,6 @@ class SingleCharacter extends Component {
         return (
             <div>
                 <div>
-                    <Link to="/">Back to Home</Link> <br></br>
                     <Link to="/characters">Back to Character Select</Link>
                 </div>
 
