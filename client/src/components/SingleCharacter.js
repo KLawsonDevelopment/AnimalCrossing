@@ -13,13 +13,21 @@ class SingleCharacter extends Component {
             coffee: '',
             img: "",
             timeAwake: '',
-            items: []
+            items: [],
         },
+        availableItems: [],
         displayEditForm: false
     }
 
     componentDidMount = () => {
         this.getCharacter()
+        this.getItems()
+    }
+
+    getItems = () => {
+        axios.get('/api/items').then(res => {
+            this.state.availableItems.push(res.data)
+        })
     }
 
     getCharacter = async () => {
@@ -109,6 +117,18 @@ class SingleCharacter extends Component {
                             <div>
                                 <label value="timeAwake">Times Awake</label>
                                 <input defaultValue={timeAwake} type="text" name="timeAwake" onChange={this.handleChange}></input>
+                            </div>
+                            <div>
+                            <label value="selectItem">Select Item</label>
+                                {
+                                    this.state.availableItems[0].map((item, i) => {
+                                        return (<div key={i}>
+                                            <input type="checkbox" />
+                                            <label value={item.name}>{item.name}</label>
+                                            </div>
+                                        )
+                                    })
+                                }
                             </div>
                             <button>Submit</button>
                         </form>

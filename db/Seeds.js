@@ -21,6 +21,14 @@ const coelacanth = new Item ({
     itemImg: 'https://vignette.wikia.nocookie.net/animalcrossing/images/0/09/Coelacanth_new_leaf.png/revision/latest?cb=20130618002151'
 })
 
+const princessCage = new Item ({
+    name: 'Princess Cage',
+    category: 'Furniture',
+    sellsFor: 22500,
+    location: 'GracieGrace, buy for 90,000',
+    itemImg: 'https://vignette.wikia.nocookie.net/animalcrossing/images/b/ba/Princess_Cage.jpg/revision/latest?cb=20130607142940'
+})
+
 const eunice = new Villager ({
     name: 'Eunice',
     species: 'Sheep',
@@ -30,7 +38,7 @@ const eunice = new Villager ({
     coffee: 'Blue Mountain, with a little milk and 1 sugar',
     img: "https://nookipedia.com/w/images/thumb/8/8f/Eunice_NLa.png/175px-Eunice_NLa.png",
     timeAwake: '6AM to Midnight',
-    items: []
+    items: [princessCage, alphineSofa]
 })
 
 const isabelle = new Villager ({
@@ -42,7 +50,7 @@ const isabelle = new Villager ({
     coffee: 'Mocha, with lots of milk and 3 sugars',
     img: "https://vignette.wikia.nocookie.net/animalcrossing/images/2/26/Isabelle_AF.png/revision/latest/scale-to-width-down/175?cb=20161008142729",
     timeAwake: '24 Hours a Day',
-    items: []
+    items: [alphineSofa]
 })
 
 const jack = new Villager ({
@@ -54,17 +62,18 @@ const jack = new Villager ({
     coffee: 'Does not drink coffee',
     img: "https://vignette.wikia.nocookie.net/animalcrossing/images/7/75/Acnl-jack.png/revision/latest/scale-to-width-down/200?cb=20130707122138",
     timeAwake: 'All Day on halloween',
-    items: []
+    items: [coelacanth]
 })
 
 Villager.deleteMany({})
     .then(() => Item.deleteMany({}))
     .then(() => Villager.create(eunice, isabelle, jack))
-    .then(() => Item.create(alphineSofa, coelacanth))
+    .then(() => Item.create(alphineSofa, coelacanth, princessCage))
     .then(() => console.log(eunice.name + " has been added"))
     .then(() => console.log(isabelle.name + " has been added"))
     .then(() => console.log(jack.name + " has been added"))
     .then(() => console.log(alphineSofa.name + " has been added"))
     .then(() => console.log(coelacanth.name + " has been added"))
+    .then(() => console.log(princessCage.name + " has been added"))
     .catch((err) => console.log(err))
     .then(() => mongoose.connection.close())
