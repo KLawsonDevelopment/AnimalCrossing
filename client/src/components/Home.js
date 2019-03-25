@@ -5,7 +5,8 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Link to="/characters">List of Characters</Link>
+                <Link to="/characters">List of Characters</Link><br></br>
+                <Link to="/faceGuide">How to get a specific face</Link>
             </div>
         );
     }

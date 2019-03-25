@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import Characters from './components/Characters';
 import SingleCharacter from './components/SingleCharacter';
 import Home from './components/Home';
+import faceGuide from './components/faceGuide';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/characters" component={Characters} />
             <Route path="/character/:id" component={SingleCharacter} />
+            <Route path="/faceGuide" component={faceGuide} />
           </Switch>
         </div>
       </Router>
