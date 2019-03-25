@@ -83,8 +83,6 @@ class Characters extends Component {
         })
         return (
             <div>
-                <h1>Characters</h1>
-                {characters}
                 <button onClick={this.toggleNewForm}>New Character</button>
                 {
                     this.state.newCharacterForm
@@ -123,8 +121,11 @@ class Characters extends Component {
                             </div>
                             <button>Submit</button>
                         </form>
-                        : <p>Click the button to make a new character!</p>
+                        : null
                 }
+                <h1>Characters</h1>
+                {characters}
+
             </div>
         );
     }

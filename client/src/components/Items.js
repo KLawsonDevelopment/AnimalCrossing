@@ -72,8 +72,6 @@ class Items extends Component {
         })
         return (
             <div>
-                <h1>Items list</h1>
-                {items}
                 <button onClick={this.toggleNewForm}>New Item</button>
                 {
                     this.state.newItemForm
@@ -102,6 +100,9 @@ class Items extends Component {
                         </form>
                         : null
                 }
+                <h1>Items list</h1>
+                {items}
+                
             </div>
         );
     }
