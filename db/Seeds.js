@@ -5,43 +5,57 @@ mongoose.connect(process.env.MONGODB_URI)
 const Villager = require('../models/Villager')
 const Item = require('../models/Item')
 
-const bindingBlade = new Item ({
-    name: 'Binding Blade',
-    category: 'Weapon',
-    sellsFor: 0,
-    location: 'Inherited',
-    itemImg: 'https://vignette.wikia.nocookie.net/fireemblem/images/0/02/Sword_of_Seals.png/revision/latest?cb=20081113214049'
+// const  = new Item ({
+//     name: '',
+//     category: '',
+//     sellsFor: ,
+//     location: '',
+//     itemImg: ''
+// })
+
+const eunice = new Villager ({
+    name: 'Eunice',
+    species: 'Sheep',
+    gender: 'Female',
+    service: 'Villager',
+    birthday: 'April 3rd',
+    coffee: 'Blue Mountain, with a little milk and 1 sugar',
+    img: "https://nookipedia.com/w/images/thumb/8/8f/Eunice_NLa.png/175px-Eunice_NLa.png",
+    timeAwake: '6AM to Midnight',
+    items: []
 })
 
-const roy = new Villager ({
-    name: 'Roy',
-    species: 'Human',
-    gender: 'Male',
-    service: 'Mercenary',
-    birthday: 'April 7th',
-    coffee : 'Black',
-    img : "https://fireemblemwiki.org/w/images/thumb/d/d5/FEA_Roy.png/400px-FEA_Roy.png",
-    timeAwake: '8 AM to 5 PM',
-    items: [bindingBlade]
+const isabelle = new Villager ({
+    name: 'Isabelle',
+    species: 'Shih Tzu',
+    gender: 'Female',
+    service: 'Town Hall Secretary',
+    birthday: 'December 20th',
+    coffee: 'Mocha, with lots of milk and 3 sugars',
+    img: "https://vignette.wikia.nocookie.net/animalcrossing/images/2/26/Isabelle_AF.png/revision/latest/scale-to-width-down/175?cb=20161008142729",
+    timeAwake: '24 Hours a Day',
+    items: []
 })
 
-const random = new Villager ({
-    name: 'Random',
-    species: 'Random',
-    gender: 'Random',
-    service: 'Random',
-    birthday: 'Random',
-    coffee: 'Random',
-    img: "https://fireemblemwiki.org/w/images/thumb/d/d5/FEA_Roy.png/400px-FEA_Roy.png",
-    timeAwake: 'Random',
+const jack = new Villager ({
+    name: 'Jack',
+    species: 'Pumpkin (???)',
+    gender: '???',
+    service: 'Halloween Event',
+    birthday: 'October 31st',
+    coffee: 'Does not drink coffee',
+    img: "https://vignette.wikia.nocookie.net/animalcrossing/images/7/75/Acnl-jack.png/revision/latest/scale-to-width-down/200?cb=20130707122138",
+    timeAwake: 'All Day on halloween',
     items: []
 })
 
 Villager.deleteMany({})
     .then(() => Item.deleteMany({}))
-    .then(() => Villager.create(roy, random))
-    .then(() => Item.create(bindingBlade))
-    .then(() => console.log(roy.name + " has been added"))
-    .then(() => console.log(bindingBlade.name + " has been added"))
+    .then(() => Villager.create(eunice, isabelle, jack))
+    // .then(() => Item.create(bindingBlade))
+    .then(() => console.log(eunice.name + " has been added"))
+    .then(() => console.log(isabelle.name + " has been added"))
+    .then(() => console.log(jack.name + " has been added"))
+    // .then(() => console.log(bindingBlade.name + " has been added"))
     .catch((err) => console.log(err))
     .then(() => mongoose.connection.close())
