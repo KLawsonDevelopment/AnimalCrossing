@@ -6,6 +6,7 @@ import Home from './components/Home';
 import faceGuide from './components/faceGuide';
 import hairGuide from './components/hairGuide';
 import Items from './components/Items';
+import singleItem from './components/singleItem';
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
             <Route path="/faceGuide" component={faceGuide} />
             <Route path="/hairGuide" component={hairGuide} />
             <Route path="/items" component={Items} />
+            <Route path="/item/:id" component={singleItem} />
           </Switch>
         </div>
       </Router>
