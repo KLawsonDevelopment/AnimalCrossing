@@ -4,6 +4,7 @@ import Characters from './components/Characters';
 import SingleCharacter from './components/SingleCharacter';
 import Home from './components/Home';
 import faceGuide from './components/faceGuide';
+import hairGuide from './components/hairGuide';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
             <Route exact path="/characters" component={Characters} />
             <Route path="/character/:id" component={SingleCharacter} />
             <Route path="/faceGuide" component={faceGuide} />
+            <Route path="/hairGuide" component={hairGuide} />
           </Switch>
         </div>
       </Router>

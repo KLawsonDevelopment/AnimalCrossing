@@ -6,7 +6,8 @@ class Home extends Component {
         return (
             <div>
                 <Link to="/characters">List of Characters</Link><br></br>
-                <Link to="/faceGuide">How to get a specific face</Link>
+                <Link to="/faceGuide">How to get a specific face</Link><br></br>
+                <Link to="/hairGuide">How to get a specific hair style</Link>
             </div>
         );
     }
