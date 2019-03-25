@@ -32,13 +32,43 @@ class Characters extends Component {
     handleChange = (event) => {
         const cloneNewCharacter = { ...this.state.newCharacter }
         cloneNewCharacter[event.target.name] = event.target.value
-        this.setState({ character: cloneNewCharacter })
+        this.setState({ newCharacter: cloneNewCharacter })
+    }
+
+    addNewCharacter = (event) => {
+        event.preventDefault()
+        axios.post('/api/characters', {
+            name: this.state.newCharacter.name,
+            species: this.state.newCharacter.species,
+            gender: this.state.newCharacter.gender,
+            service: this.state.newCharacter.service,
+            birthday: this.state.newCharacter.birthday,
+            coffee: this.state.newCharacter.coffee,
+            img: this.state.newCharacter.img,
+            timeAwake: this.state.newCharacter.timeAwake
+        })
+            .then((res) => {
+                const characterList = [...this.state.characters]
+                characterList.unshift(res.data)
+                this.setState({
+                    newCharacter: {
+                        name: '',
+                        species: '',
+                        gender: '',
+                        service: '',
+                        birthday: '',
+                        coffee: '',
+                        img: '',
+                        timeAwake: ''
+                    },
+                    newCharacterForm: false,
+                    characters: characterList
+                })
+            })
     }
 
     toggleNewForm = () => {
-        this.setState((state, props) => {
-            return { newCharacterForm: !state.newCharacterForm }
-        })
+        this.setState({ newCharacterForm: !this.state.newCharacterForm })
     }
     render() {
 
@@ -57,39 +87,39 @@ class Characters extends Component {
                 {characters}
                 <button onClick={this.toggleNewForm}>New Character</button>
                 {
-                    this.state.newCreatureForm
-                        ? <form onSubmit={this.updateCharacter}>
+                    this.state.newCharacterForm
+                        ? <form onSubmit={this.addNewCharacter}>
                             <div>
                                 <label value="Name">Name</label>
-                                <input type="text" name="name" onChange={this.handleChange} value={this.state.newCharacter.name}></input>
+                                <input type="text" name="name" onChange={this.handleChange} defaultValue={this.state.newCharacter.name}></input>
                             </div>
                             <div>
                                 <label value="Species">Species</label>
-                                <input type="text" name="species" onChange={this.handleChange} value={this.state.newCharacter.species}></input>
+                                <input type="text" name="species" onChange={this.handleChange} defaultValue={this.state.newCharacter.species}></input>
                             </div>
                             <div>
                                 <label value="gender">Gender</label>
-                                <input type="text" name="gender" onChange={this.handleChange} value={this.state.newCharacter.gender}></input>
+                                <input type="text" name="gender" onChange={this.handleChange} defaultValue={this.state.newCharacter.gender}></input>
                             </div>
                             <div>
                                 <label value="service">Service</label>
-                                <input type="text" name="service" onChange={this.handleChange} value={this.state.newCharacter.service}></input>
+                                <input type="text" name="service" onChange={this.handleChange} defaultValue={this.state.newCharacter.service}></input>
                             </div>
                             <div>
                                 <label value="birthday">Birthday</label>
-                                <input type="text" name="birthday" onChange={this.handleChange} value={this.state.newCharacter.birthday}></input>
+                                <input type="text" name="birthday" onChange={this.handleChange} defaultValue={this.state.newCharacter.birthday}></input>
                             </div>
                             <div>
                                 <label value="coffee">Coffee</label>
-                                <input type="text" name="coffee" onChange={this.handleChange} value={this.state.newCharacter.coffee}></input>
+                                <input type="text" name="coffee" onChange={this.handleChange} defaultValue={this.state.newCharacter.coffee}></input>
                             </div>
                             <div>
                                 <label value="img">Villager Image</label>
-                                <input type="text" name="img" onChange={this.handleChange} value={this.state.newCharacter.img}></input>
+                                <input type="text" name="img" onChange={this.handleChange} defaultValue={this.state.newCharacter.img}></input>
                             </div>
                             <div>
                                 <label value="timeAwake">Times Awake</label>
-                                <input type="text" name="timeAwake" onChange={this.handleChange} value={this.state.newCharacter.timeAwake}></input>
+                                <input type="text" name="timeAwake" onChange={this.handleChange} defaultValue={this.state.newCharacter.timeAwake}></input>
                             </div>
                             <button>Submit</button>
                         </form>

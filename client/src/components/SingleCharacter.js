@@ -57,9 +57,7 @@ class SingleCharacter extends Component {
     }
 
     toggleEditForm = () => {
-        this.setState((state, props) => {
-            return { displayEditForm: !state.displayEditForm }
-        })
+        this.setState({ displayEditForm: !this.state.displayEditForm })
     }
 
     render() {
