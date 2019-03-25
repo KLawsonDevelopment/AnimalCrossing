@@ -5,13 +5,21 @@ mongoose.connect(process.env.MONGODB_URI)
 const Villager = require('../models/Villager')
 const Item = require('../models/Item')
 
-// const  = new Item ({
-//     name: '',
-//     category: '',
-//     sellsFor: ,
-//     location: '',
-//     itemImg: ''
-// })
+const alphineSofa = new Item ({
+    name: 'Alphine Sofa',
+    category: 'Furniture',
+    sellsFor: 2350,
+    location: 'Nookling Shops / Gift',
+    itemImg: 'https://i.pinimg.com/originals/e6/07/c7/e607c7e5086f26f543912777c4c51e5c.jpg'
+})
+
+const coelacanth = new Item ({
+    name: 'Coelacanth',
+    category: 'Ocean Fish',
+    sellsFor: 15000,
+    location: `Island's Ocean`,
+    itemImg: 'https://vignette.wikia.nocookie.net/animalcrossing/images/0/09/Coelacanth_new_leaf.png/revision/latest?cb=20130618002151'
+})
 
 const eunice = new Villager ({
     name: 'Eunice',
@@ -52,10 +60,11 @@ const jack = new Villager ({
 Villager.deleteMany({})
     .then(() => Item.deleteMany({}))
     .then(() => Villager.create(eunice, isabelle, jack))
-    // .then(() => Item.create(bindingBlade))
+    .then(() => Item.create(alphineSofa, coelacanth))
     .then(() => console.log(eunice.name + " has been added"))
     .then(() => console.log(isabelle.name + " has been added"))
     .then(() => console.log(jack.name + " has been added"))
-    // .then(() => console.log(bindingBlade.name + " has been added"))
+    .then(() => console.log(alphineSofa.name + " has been added"))
+    .then(() => console.log(coelacanth.name + " has been added"))
     .catch((err) => console.log(err))
     .then(() => mongoose.connection.close())
