@@ -58,25 +58,6 @@ class SingleCharacter extends Component {
         }
 
         this.setState({selectedItem: filteredSelected})
-
-        // const availableItems = {...this.state.availableItems[0]}
-        // console.log('available',availableItems)
-        // const newObj = Object.values(availableItems)
-        // console.log(newObj)
-
-        // const filt = newObj.filter((arr) => {
-        //    if(arr.name == name){
-        //     this.selected.push(arr) 
-        //    }
-        // })
-        // console.log(this.selected)
-
-        // const thisOne = availableItems[event.target.name] = event.target.checked
-        // console.log(thisOne)
-        // console.log(availableItems[event.target.name])
-        // if(thisOne){
-        //     this.state.selectedItem.push()
-        // }
     }
 
 
