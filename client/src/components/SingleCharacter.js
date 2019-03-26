@@ -16,6 +16,7 @@ class SingleCharacter extends Component {
             items: [],
         },
         availableItems: [],
+        selectedItem: [],
         displayEditForm: false
     }
 
@@ -41,6 +42,44 @@ class SingleCharacter extends Component {
         this.setState({character: editCharacter})
     }
 
+    
+    selectItem = (event) => {
+        const selected = [...this.state.selectedItem]
+
+        const itemExistsInSelected = selected.find(item => item.name === event.target.name)
+        const availableItems = [...this.state.availableItems[0]]
+        let filteredSelected = [...this.state.selectedItem]
+
+        if (itemExistsInSelected) {
+            filteredSelected = selected.filter(item => item.name !== event.target.name)
+        } else {
+            const item = availableItems.find(item => item.name === event.target.name)
+            filteredSelected = filteredSelected.concat(item)
+        }
+
+        this.setState({selectedItem: filteredSelected})
+
+        // const availableItems = {...this.state.availableItems[0]}
+        // console.log('available',availableItems)
+        // const newObj = Object.values(availableItems)
+        // console.log(newObj)
+
+        // const filt = newObj.filter((arr) => {
+        //    if(arr.name == name){
+        //     this.selected.push(arr) 
+        //    }
+        // })
+        // console.log(this.selected)
+
+        // const thisOne = availableItems[event.target.name] = event.target.checked
+        // console.log(thisOne)
+        // console.log(availableItems[event.target.name])
+        // if(thisOne){
+        //     this.state.selectedItem.push()
+        // }
+    }
+
+
     updateCharacter =  (event) => {
         event.preventDefault()
         axios.put(`/api/characters/${this.props.match.params.id}`, {
@@ -51,10 +90,12 @@ class SingleCharacter extends Component {
             birthday: this.state.character.birthday,
             coffee: this.state.character.coffee,
             img: this.state.character.img,
-            timeAwake: this.state.character.timeAwake
+            timeAwake: this.state.character.timeAwake,
+            items: this.state.selectedItem
         })
         .then((res) => {
             this.setState({character: res.data, displayEditForm:false})
+            this.getCharacter()
         })
     }
 
@@ -123,7 +164,7 @@ class SingleCharacter extends Component {
                                 {
                                     this.state.availableItems[0].map((item, i) => {
                                         return (<div key={i}>
-                                            <input type="checkbox" />
+                                            <input type="checkbox" name={item.name} onChange={this.selectItem}/>
                                             <label value={item.name}>{item.name}</label>
                                             </div>
                                         )
