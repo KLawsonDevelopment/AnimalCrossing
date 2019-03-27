@@ -7,8 +7,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url('https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0050/6144/rgrass_pattern_3x3_shop_preview.png');
-  /* background-size cover; */
-  /* background-repeat: no-repeat; */
   background-position: center;
   color: rgb(255, 253, 208);
 }
@@ -27,6 +25,7 @@ code {
   font-size: 30px;
   color: rgb(255, 253, 208);
 }
+
 
 .characters {
   text-decoration: none;
@@ -83,6 +82,13 @@ color: rgb(255, 253, 208);
   color: rgb(255, 253, 208);
 }
 
+.character-link:hover {
+  color: rgb(198,126,67);
+  cursor: pointer;
+  transition: 1s;
+  transform: scale(1.1);
+}
+
 #home {
   position: fixed;
   bottom: 15px;
@@ -93,6 +99,33 @@ color: rgb(255, 253, 208);
 }
 
 #home:hover {
+  color: rgb(198,126,67);
+  cursor: pointer;
+  transition: 1s;
+  transform: scale(1.1);
+}
+
+.itemsFlexbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+  background-color: rgba(68,118,67, 0.9);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 24%;
+}
+
+.item-link {
+  text-decoration: none;
+  font-size: 2rem;
+  color: rgb(255, 253, 208);
+}
+
+.item-link:hover {
   color: rgb(198,126,67);
   cursor: pointer;
   transition: 1s;

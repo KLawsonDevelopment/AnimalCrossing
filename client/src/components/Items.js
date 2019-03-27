@@ -64,8 +64,8 @@ class Items extends Component {
         const items = this.state.items.map((items, i) => {
             return (
                 <div key={i}>
-                    <Link to={`/item/${items._id}`}>
-                        <img src={items.itemImg} alt={items.name} />
+                    <Link to={`/item/${items._id}`} className="item-link">
+                        <img src={items.itemImg} alt={items.name} /> <br></br>{items.name}
                     </Link>
                 </div>
             )
@@ -101,7 +101,7 @@ class Items extends Component {
                         : null
                 }
                 <h1>Items list</h1>
-                {items}
+                <div className="itemsFlexbox">{items}</div>
                 
             </div>
         );
