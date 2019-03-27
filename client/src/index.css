@@ -6,9 +6,95 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0050/6144/rgrass_pattern_3x3_shop_preview.png');
+  /* background-size cover; */
+  /* background-repeat: no-repeat; */
+  background-position: center;
+  color: rgb(255, 253, 208);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+ 
+
+.home, Link {
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  margin: 20px;
+  font-size: 30px;
+  color: rgb(255, 253, 208);
+}
+
+.characters {
+  text-decoration: none;
+color: rgb(255, 253, 208);
+}
+
+.faceGuide {
+  text-decoration: none;
+color: rgb(255, 253, 208);
+}
+
+.hairGuide {
+  text-decoration: none;
+color: rgb(255, 253, 208);
+}
+
+.items { 
+  text-decoration: none;
+  color: rgb(255, 253, 208);}
+
+/* .characterList {
+  border: 5px solid rgb(198,126,67)
+} */
+
+.characterList img {
+  width: 10vw;
+  height: auto;
+  padding: 8px;
+}
+
+.characterFlexbox{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+  background-color: rgba(68,118,67, 0.9);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 24%;
+}
+
+.character-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.character-link {
+  text-decoration: none;
+  font-size: 2rem;
+  color: rgb(255, 253, 208);
+}
+
+#home {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: rgb(255, 253, 208);
+}
+
+#home:hover {
+  color: rgb(198,126,67);
+  cursor: pointer;
+  transition: 1s;
+  transform: scale(1.1);
 }

@@ -74,15 +74,15 @@ class Characters extends Component {
 
         const characters = this.state.characters.map((character, i) => {
             return (
-                <div key={i}>
-                    <Link to={`/character/${character._id}`}>
-                        <img src={character.img} alt={character.name}></img>
+                <div key={i} className="characterList">
+                    <Link to={`/character/${character._id}`} className="character-link">
+                        <img src={character.img} alt={character.name} />{character.name}
                     </Link>
                 </div>
             )
         })
         return (
-            <div>
+            <div style={{width: '100%'}}>
                 <button onClick={this.toggleNewForm}>New Character</button>
                 {
                     this.state.newCharacterForm
@@ -124,7 +124,7 @@ class Characters extends Component {
                         : null
                 }
                 <h1>Characters</h1>
-                {characters}
+                <div className="characterFlexbox">{characters}</div>
 
             </div>
         );

@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Link to={"/"}>Home</Link>
+          
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/characters" component={Characters} />
@@ -23,6 +23,7 @@ class App extends Component {
             <Route path="/items" component={Items} />
             <Route path="/item/:id" component={singleItem} />
           </Switch>
+          <Link id="home" to={"/"}>Home</Link>
         </div>
       </Router>
     );

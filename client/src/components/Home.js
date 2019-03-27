@@ -4,11 +4,11 @@ import {Link} from 'react-router-dom'
 class Home extends Component {
     render() {
         return (
-            <div>
-                <Link to="/characters">List of Characters</Link><br></br>
-                <Link to="/faceGuide">How to get a specific face</Link><br></br>
-                <Link to="/hairGuide">How to get a specific hair style</Link><br></br>
-                <Link to="/items">List of Items</Link>
+            <div className="home">
+                <Link to="/characters" className="characters">List of Characters</Link><br></br>
+                <Link to="/faceGuide" className="faceGuide">How to get a specific face</Link><br></br>
+                <Link to="/hairGuide" className="hairGuide">How to get a specific hair style</Link><br></br>
+                <Link to="/items" className="items">List of Items</Link>
             </div>
         );
     }

@@ -45,18 +45,15 @@ class SingleCharacter extends Component {
     
     selectItem = (event) => {
         const selected = [...this.state.selectedItem]
-
         const itemExistsInSelected = selected.find(item => item.name === event.target.name)
         const availableItems = [...this.state.availableItems[0]]
         let filteredSelected = [...this.state.selectedItem]
-
         if (itemExistsInSelected) {
             filteredSelected = selected.filter(item => item.name !== event.target.name)
         } else {
             const item = availableItems.find(item => item.name === event.target.name)
             filteredSelected = filteredSelected.concat(item)
         }
-
         this.setState({selectedItem: filteredSelected})
     }
 
