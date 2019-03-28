@@ -32,6 +32,10 @@ Flex-Box
 
 Character/Item Images provided by Nintendo's Animal Crossing: New Leaf
 
+#Version 2
+
+Better mobile enviornment, calling external API to display all characters within the game, Better placements within the site itself, admin control (not allowing standard users to edit/delete) 
+
 #Shoutouts
 
 The entire class for dealing with my insane checkbox debacle. Specifically Chad/Taylor for attempting to point me in the right direction.
