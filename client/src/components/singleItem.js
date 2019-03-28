@@ -59,7 +59,7 @@ class singleItem extends Component {
         return (
 
             <div>
-                <Link to="/items">Return to Item page</Link>
+                <Link to="/items" id="itemBackButton">Return to Item page</Link>
                 <p><button onClick={this.toggleEditForm}>Edit this Item</button></p>
                 {
                     this.state.displayEditForm

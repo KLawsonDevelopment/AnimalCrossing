@@ -97,7 +97,7 @@ class SingleCharacter extends Component {
         return (
             <div>
                 <div>
-                    <Link to="/characters">Back to Character Select</Link>
+                    <Link to="/characters" id="characterBackButton">Back to Character Select</Link>
                 </div>
 
                 <button onClick={this.toggleEditForm}>Edit This Character</button>

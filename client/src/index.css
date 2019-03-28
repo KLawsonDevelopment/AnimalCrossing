@@ -131,3 +131,29 @@ color: rgb(255, 253, 208);
   transition: 1s;
   transform: scale(1.1);
 }
+
+#characterBackButton {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: rgb(255, 253, 208);
+}
+
+#characterBackButton:hover {
+  color: rgb(198,126,67);
+  cursor: pointer;
+  transition: 1s;
+  transform: scale(1.1);
+}
+
+#itemBackButton{
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: rgb(255, 253, 208);
+}
+
+#itemBackButton:hover {
+  color: rgb(198,126,67);
+  cursor: pointer;
+  transition: 1s;
+  transform: scale(1.1);
+}
