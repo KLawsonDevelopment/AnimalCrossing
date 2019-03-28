@@ -73,7 +73,7 @@ class singleItem extends Component {
                         <input type="text" name='category' onChange={this.handleChange} defaultValue={this.state.item.category}></input>
                     </div>
                     <div>
-                        <label value="sellsFor">Sells For</label>
+                        <label value="sellsFor">Costs </label>
                         <input type="number" name="sellsFor" onChange={this.handleChange} defaultValue={this.state.item.sellsFor}></input>
                     </div>
                     <div>
@@ -90,7 +90,7 @@ class singleItem extends Component {
                     <button onClick={this.deleteItem}>Delete This Item</button>
                 <h1>{name}</h1>
                 <p>Category: {category}</p>
-                <p>Sells For: {sellsFor}</p>
+                <p>Costs: {sellsFor}</p>
                 <p>Location: {location}</p>
                 <img src={itemImg} alt={name} className="itemImage"></img>
                 </div>
