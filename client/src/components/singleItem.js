@@ -92,7 +92,7 @@ class singleItem extends Component {
                 <p>Category: {category}</p>
                 <p>Sells For: {sellsFor}</p>
                 <p>Location: {location}</p>
-                <img src={itemImg} alt={name}></img>
+                <img src={itemImg} alt={name} className="itemImage"></img>
                 </div>
                 }
             </div>

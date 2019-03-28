@@ -161,9 +161,21 @@ color: rgb(255, 253, 208);
   transform: scale(1.1);
 }
 
-.itemsFlexBox {
+.characterItems {
   display: inline-block;
   margin: 5px;
+}
+
+.characterImage {
+  width: 25vw;
+}
+
+.hairGuide { 
+  width: 75vw;
+}
+
+.faceGuide {
+  width: 75vw;
 }
 
 @media (max-width: 700px) {
@@ -217,5 +229,14 @@ color: rgb(255, 253, 208);
 
   .itemsFlexbox{
     flex-direction: column;
+  }
+
+  .characterItems img {
+    width: 23vw;
+  }
+
+  .itemImage { 
+    width: 40vw;
+    height: auto;
   }
 }

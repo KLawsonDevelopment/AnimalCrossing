@@ -90,7 +90,7 @@ class SingleCharacter extends Component {
     render() {
         const { name, species, gender, service, birthday, coffee, img, timeAwake } = this.state.character
         const items = this.state.character.items.map((item, i) => {
-            return <div key={i} className="itemsFlexBox">
+            return <div key={i} className="characterItems">
                 <Link to={`/item/${item._id}`}><img src={item.itemImg} alt={item.name}></img></Link>
             </div>
         })
@@ -170,7 +170,7 @@ class SingleCharacter extends Component {
                             <div>
                                 Likes their coffee: {coffee}
                             </div>
-                            <img src={img} alt={name}></img>
+                            <img src={img} alt={name} className="characterImage"></img>
                             <div>
                                 When they are awake: {timeAwake}
                             </div>
