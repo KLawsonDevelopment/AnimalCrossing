@@ -46,12 +46,15 @@ color: rgb(255, 253, 208);
   text-decoration: none;
   color: rgb(255, 253, 208);}
 
-/* .characterList {
-  border: 5px solid rgb(198,126,67)
-} */
 
 .characterList img {
   width: 10vw;
+  height: auto;
+  padding: 8px;
+}
+
+.itemList img {
+  width: 15vw;
   height: auto;
   padding: 8px;
 }
@@ -198,5 +201,21 @@ color: rgb(255, 253, 208);
 
   .hidden {
     opacity: 0;
+  }
+
+  .itemList {
+    width: 10vw;
+  }
+
+  .itemList p {
+    font-size: 15px;
+  }
+
+  .h1Items {
+    font-size: 15px;
+  }
+
+  .itemsFlexbox{
+    flex-direction: column;
   }
 }

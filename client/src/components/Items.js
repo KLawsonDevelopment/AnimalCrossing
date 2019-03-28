@@ -58,14 +58,21 @@ class Items extends Component {
     }
 
     toggleNewForm = () => {
+        let element = document.getElementById('itemsFlexbox')
+        if (element.classList.contains('hidden')) {
+            element.classList.remove('hidden')
+        }
+        else {
+            element.classList.add('hidden')
+        }
         this.setState({ newItemForm: !this.state.newItemForm })
     }
     render() {
         const items = this.state.items.map((items, i) => {
             return (
-                <div key={i}>
+                <div key={i} className="itemList">
                     <Link to={`/item/${items._id}`} className="item-link">
-                        <img src={items.itemImg} alt={items.name} /> <br></br>{items.name}
+                        <img src={items.itemImg} alt={items.name} /><p>{items.name}</p>
                     </Link>
                 </div>
             )
@@ -100,8 +107,8 @@ class Items extends Component {
                         </form>
                         : null
                 }
-                <h1>Items list</h1>
-                <div className="itemsFlexbox">{items}</div>
+                <h1 className="h1Items">Items list</h1>
+                <div className="itemsFlexbox" id="itemsFlexbox">{items}</div>
                 
             </div>
         );
