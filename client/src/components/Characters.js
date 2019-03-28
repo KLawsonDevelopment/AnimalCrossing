@@ -37,6 +37,8 @@ class Characters extends Component {
 
     addNewCharacter = (event) => {
         event.preventDefault()
+        let element = document.getElementById('characterFlexbox')
+        element.classList.remove('hidden')
         axios.post('/api/characters', {
             name: this.state.newCharacter.name,
             species: this.state.newCharacter.species,
@@ -68,6 +70,13 @@ class Characters extends Component {
     }
 
     toggleNewForm = () => {
+        let element = document.getElementById('characterFlexbox')
+        if (element.classList.contains('hidden')) {
+            element.classList.remove('hidden')
+        }
+        else {
+            element.classList.add('hidden')
+        }
         this.setState({ newCharacterForm: !this.state.newCharacterForm })
     }
     render() {
@@ -123,8 +132,8 @@ class Characters extends Component {
                         </form>
                         : null
                 }
-                <h1>Characters</h1>
-                <div className="characterFlexbox">{characters}</div>
+                <h1 className="h1Characters">Characters</h1>
+                <div className="characterFlexbox" id="characterFlexbox">{characters}</div>
 
             </div>
         );

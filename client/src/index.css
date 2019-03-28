@@ -162,3 +162,41 @@ color: rgb(255, 253, 208);
   display: inline-block;
   margin: 5px;
 }
+
+@media (max-width: 700px) {
+  .home, Link {
+    font-size: 15px;
+  }
+
+  .characters {
+    margin: 5px;
+  }
+
+  .faceGuide {
+    margin: 5px;
+  }
+
+  .hairGuide {
+    margin: 5px;
+  }
+
+  .items{ 
+    margin: 5px;
+  }
+
+  .characterList {
+    width: 5vw;
+  }
+
+  .characterFlexbox {
+    flex-direction: column;
+  }
+
+  .h1Characters {
+    font-size: 15px;
+  }
+
+  .hidden {
+    opacity: 0;
+  }
+}
