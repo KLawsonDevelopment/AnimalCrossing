@@ -109,7 +109,7 @@ class Characters extends Component {
                             </div>
                             <div>
                                 <label value="coffee">Coffee</label>
-                                <input type="text" name="coffee" onChange={this.handleChange} defaultValue={this.state.newCharacter.coffee}></input>
+                                <textarea name="coffee" rows="3" cols="20" onChange={this.handleChange} defaultValue={this.state.newCharacter.coffee}></textarea>
                             </div>
                             <div>
                                 <label value="img">Villager Image</label>
